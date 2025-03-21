@@ -1,9 +1,9 @@
-pipeline {
+pipeline{
     agent any
     stages {
-        stage ('GIT Checkout'){
+        stage('GIT Checkout'){
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/bestJaneever/ci-cd.git'
+                git url: 'https://github.com/bestJaneever/ci-cd.git'
             }
         }
         stage('build') {
@@ -11,7 +11,7 @@ pipeline {
                 sh 'pip install -r requirements.txt'
             }
         }
-        stage ('Test'){
+        stage('Test'){
             steps {
                 sh 'pytest testfile.py --html=report.html --self-contained-html'
             }
