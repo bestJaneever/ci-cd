@@ -5,15 +5,17 @@ pipeline {
         VENV = 'venv' // Python virtual environment folder
     }
 
-    tools {
-        python 'Python-3.11' // Name matching the Python version installed in the Dockerfile
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
                 // Clone your Python project's repository
                 git 'https://github.com/bestJaneever/ci-cd.git'
+            }
+        }
+
+        stage('Python version'){
+            steps{
+                sh 'python3 --version'
             }
         }
 
