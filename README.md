@@ -44,7 +44,7 @@ To restore requirements run command:
 
      pip install -r requirements.txt
 
-4. Generate an HTML Report:
+4. Generate an HTML Report: 
 
    pytest testfile.py --html=report.html --self-contained-html
 
