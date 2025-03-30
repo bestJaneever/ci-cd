@@ -46,7 +46,6 @@ pipeline {
         }
         stage('Copy + push to another branch') {
             steps {
-                sh 'git branch -D release'
                 sh 'git checkout feature/f1'
                 sh 'git switch -c release'
                 sh 'git add .'
@@ -55,6 +54,8 @@ pipeline {
                 sh 'git commit -m "Release commit"'
                 sh 'git remote set-url origin https://bestJaneever:${TOKEN}@github.com/bestJaneever/ci-cd.git'
                 sh 'git push -u origin release'
+                sh 'git checkout feature/f1'
+                sh 'git branch -D release'
             }
         }
     }
