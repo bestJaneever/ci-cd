@@ -51,7 +51,6 @@ pipeline {
                 sh 'git add .'
                 sh 'git config --global user.name "bestJaneever"'
                 sh 'git config --global user.email "eugeniagrebenko@gmail.com"'
-                sh 'git commit -m "Release commit"'
                 sh 'git remote set-url origin https://bestJaneever:${TOKEN}@github.com/bestJaneever/ci-cd.git'
                 sh 'git push -u origin release'
                 sh 'git checkout feature/f1'
