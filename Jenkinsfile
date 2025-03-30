@@ -40,7 +40,7 @@ pipeline {
                 sh '''
                 . ${VENV}/bin/activate
                 realpath "$0"
-                pytest /var/jenkins_home/workspace/Task/ci-cd/testfile.py
+                pytest testfile.py
                 '''
             }
         }
