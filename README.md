@@ -6,9 +6,9 @@ This project automates testing for the TRN database hosted on a Microsoft SQL Se
 library. The tests validate data in multiple tables, including counts, existence of specific values, minimum and maximum
 values, and data ranges.
 
-# Prerequisites
+# Prerequisites  
 
-1. Database Setup
+1. Database Setup 
 
 Ensure you have a database "TRN" hosted on a SQL Server instance. 
 
