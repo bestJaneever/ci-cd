@@ -17,8 +17,8 @@ pipeline {
             }
         }
 
-        stage('Python version'){
-            steps{
+        stage('Python version') {
+            steps {
                 sh 'python3 --version'
             }
         }
@@ -42,6 +42,17 @@ pipeline {
                 realpath "$0"
                 pytest testfile.py
                 '''
+            }
+        }
+        stage('Copy + push to another branch') {
+            steps {
+                sh 'git init'
+                sh 'git add .'
+                sh 'git config --global user.name "Yauheniya Hrebianko"'
+                sh 'git config --global user.email "eugeniagrebenko@gmail.com"'
+                sh 'git commit -m "commit"'
+                sh 'git remote set-url origin https://bestJaneever:${TOKEN}@github.com/bestJaneever/ci_cd.git'
+                sh 'git push --set-upstream origin main'
             }
         }
     }
