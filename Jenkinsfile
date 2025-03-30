@@ -8,13 +8,12 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone your Python project's repository
-                git 'https://github.com/bestJaneever/ci-cd.git'
+                git changelog: false, poll: false, url: 'https://github.com/bestJaneever/ci-cd.git'
             }
         }
 
-        stage('Python version'){
-            steps{
+        stage('Python version') {
+            steps {
                 sh 'python3 --version'
             }
         }
