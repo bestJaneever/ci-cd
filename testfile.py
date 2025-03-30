@@ -1,4 +1,4 @@
-import dbService_pymssql as db
+import dbService as db
 import queries
 
 # Verify Australia exists without duplicates in [hr.].[countries]
@@ -42,5 +42,5 @@ def test_accuracy_for_salary():
 
 
 def run_query(query):
-    db_service = db.dbServicePymssql()
+    db_service = db.dbService()
     return db_service.execute_query(query)

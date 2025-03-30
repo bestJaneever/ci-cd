@@ -3,8 +3,8 @@ import pandas as pd
 
 SERVER = "127.0.0.1"
 DATABASE = "TRN"
-USERNAME = "***"
-PASSWORD = "***"
+USERNAME = "dbo_user"
+PASSWORD = "@11dbo_user_for_RF"
 
 
 class dbService:
