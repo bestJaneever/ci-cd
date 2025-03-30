@@ -1,7 +1,7 @@
 import pymssql
 import pandas as pd
 
-SERVER = "127.0.0.1"
+SERVER = "localhost"
 DATABASE = "TRN"
 USERNAME = "dbo_user"
 PASSWORD = "@11dbo_user_for_RF"
