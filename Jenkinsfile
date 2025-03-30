@@ -54,7 +54,7 @@ pipeline {
                 sh 'git remote set-url origin https://bestJaneever:${TOKEN}@github.com/bestJaneever/ci-cd.git'
                 sh 'git branch -D release'
                 sh 'git checkout -b release'
-                sh 'git push origin release'
+                sh 'git push -u origin release'
             }
         }
     }
