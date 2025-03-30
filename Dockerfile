@@ -20,6 +20,10 @@ RUN python3 -m pip install --upgrade pip --break-system-packages
 # Uncomment the line below to include additional libraries like pytest or flask
 RUN python3 -m pip install pytest --break-system-packages
 
+# (Optional) Add Python dependencies from requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN python3 -m pip install --no-cache-dir -r /tmp/requirements.txt --break-system-packages
+
 # Add environment variables to Jenkins user
 ENV PATH="/var/jenkins_home/.local/bin:$PATH"
 
@@ -29,6 +33,3 @@ USER jenkins
 # Set Jenkins home directory as the working directory
 WORKDIR /var/jenkins_home
 
-# (Optional) Add Python dependencies from requirements.txt
-COPY requirements.txt /tmp/requirements.txt
-RUN python3 -m pip install --no-cache-dir -r /tmp/requirements.txt --break-system-packages
