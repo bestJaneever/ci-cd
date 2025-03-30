@@ -13,9 +13,7 @@ pipeline {
         }
         stage('Clone Repository') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/bestJaneever/ci-cd.git'
-                // Clone your Python project's repository
-                // sh 'git clone -b feature/f1 https://github.com/bestJaneever/ci-cd.git'
+                git branch: 'feature/f1', url: 'https://github.com/bestJaneever/ci-cd.git'
             }
         }
 
