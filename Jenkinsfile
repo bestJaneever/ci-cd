@@ -52,7 +52,7 @@ pipeline {
                 sh 'git add .'
                 sh 'git config --global user.name "bestJaneever"'
                 sh 'git config --global user.email "eugeniagrebenko@gmail.com"'
-                sh 'git config --global url.https://${TOKEN}@github.com/'
+                sh 'git config --global url.https://${TOKEN}@github.com/bestJaneever/ci-cd.git'
                 sh 'git commit -m "Release commit"'
                 sh 'git push -u origin release'
             }
