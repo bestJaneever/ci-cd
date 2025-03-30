@@ -52,7 +52,7 @@ pipeline {
                 sh 'git config --global user.email "eugeniagrebenko@gmail.com"'
                 sh 'git commit -m "commit"'
                 sh 'git remote set-url origin https://bestJaneever:${TOKEN}@github.com/bestJaneever/ci_cd.git'
-                sh 'git push --set-upstream origin main'
+                sh 'git push --set-upstream origin release'
             }
         }
     }
